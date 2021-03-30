@@ -1,0 +1,22 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "site": "",
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+      "source": "**/*.@(jpg|jpeg|gif|png|woff|woff2)",
+      "headers": [{
+        "key": "Cache-Control",
+        "value": "max-age=108000"
+      }]
+    }]
+  }
+}
